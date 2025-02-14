@@ -5,12 +5,12 @@ This is a simple command-line To-Do List application built with Python. It allow
 
 ## ✨ Features
 - Add new tasks
-- View all tasks
-- Mark tasks as completed
-- Delete tasks
-- Update existing tasks
-- Load tasks from a JSON file
-- Prevent duplicate task entries
+- 📋View all tasks
+- ✅Mark tasks as completed
+- 🗑Delete tasks
+- ✏️Update existing tasks
+- 💾Load tasks from a JSON file
+- 🔄Prevent duplicate task entries
 
 ## 🛠 Installation
 ### Prerequisites:
@@ -19,11 +19,11 @@ This is a simple command-line To-Do List application built with Python. It allow
 ### Steps:
 1. Clone the repository:
    ```sh
-   git clone https://github.com/husseini2000/todo-list.git
+   git clone https://github.com/husseini2000/To-Do-List.git
    ```
 2. Navigate to the project directory:
    ```sh
-   cd todo-list-cli
+   cd To-Do-List
    ```
 3. Run the program:
    ```sh
@@ -64,7 +64,7 @@ When you run the script, you will see a menu with the following options:
 1. Choose option `5`.
 2. Enter the task number to update.
 3. Provide a new task name.
-4. Task will be updated.
+4. The task will be updated.
 
 ### Loading Saved Tasks
 - Choose option `6` to reload tasks from the JSON file.
@@ -80,6 +80,7 @@ When you run the script, you will see a menu with the following options:
 - [ ] Integrate with a database instead of a JSON file
 - [ ] Implement a graphical user interface (GUI)
 - [ ] Add notifications/reminders
+- [ ] User verification to create a profile for each user
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
