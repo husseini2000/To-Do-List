@@ -1,92 +1,189 @@
-# 📌 To-Do List CLI Application
+﻿# To-Do List Application
 
-## 📝 Overview
-This is a simple command-line To-Do List application built with Python. It allows users to manage their tasks efficiently by adding, updating, deleting, and marking tasks as completed. Tasks are stored in a JSON file, ensuring persistence between sessions.
+A feature-rich command-line todo list application written in Python that helps you manage your tasks efficiently. The application follows Python best practices including PEP 8 style guide and PEP 257 docstring conventions.
 
-## ✨ Features
-- Add new tasks
-- 📋View all tasks
-- ✅Mark tasks as completed
-- 🗑Delete tasks
-- ✏️Update existing tasks
-- 💾Load tasks from a JSON file
-- 🔄Prevent duplicate task entries
+## 🌟 Features
 
-## 🛠 Installation
-### Prerequisites:
-- Python 3.x installed on your system
+### Core Features
+- Add, view, update, and delete tasks
+- Mark tasks as complete/incomplete
+- Filter tasks by status (pending/completed)
+- Categorize tasks
+- Set task priorities
+- Add due dates
+- Color coding support
+- Task descriptions
+- Full type hints support
+- Comprehensive documentation
 
-### Steps:
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/husseini2000/To-Do-List.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd To-Do-List
-   ```
-3. Run the program:
-   ```sh
-   python todo.py
-   ```
+### Advanced Features
+- 🔄 Sort tasks by:
+  - Due date
+  - Priority
+  - Title
+  - Category
+  
+- 📊 Task Statistics
+  - Total tasks count
+  - Completion rates
+  - Distribution by priority
+  - Distribution by category
 
-## 🚀 Usage
-When you run the script, you will see a menu with the following options:
+- 🔍 Search Functionality
+  - Search across titles
+  - Search in descriptions
+  - Search by category
+
+- 📤 Export Options
+  - CSV format (for spreadsheet analysis)
+  - Text format (for readable backup)
+
+## 🔧 Technical Specifications
+
+### Code Structure
+- Follows PEP 8 style guide
+- Implements PEP 257 docstring conventions
+- Uses Python type hints throughout
+- Implements dataclasses for data management
+- Uses enums for type safety
+- Modular function design
+- Comprehensive error handling
+
+### Data Model
+```python
+@dataclass
+class Task:
+    title: str
+    completed: bool = False
+    priority: Priority = Priority.MEDIUM
+    due_date: Optional[str] = None
+    category: str = "general"
+    description: Optional[str] = None
+    color: Optional[str] = None
 ```
-📌 TO-DO LIST 📌
-1. Add a task
-2. View tasks
-3. Mark task as completed
-4. Delete a task
-5. Update task
-6. Load tasks
-7. Exit
+
+### Performance Features
+- Dictionary-based lookups for efficiency
+- Optimized task filtering
+- Indexed task validation
+- Efficient sorting mechanisms
+- Smart data structures
+
+### Code Quality
+- Type-checked with proper annotations
+- Comprehensive docstrings
+- Error handling with specific exceptions
+- Clear function signatures
+- Consistent code style
+
+## 📋 Usage Guide
+
+### Task Priority Levels
+```python
+class Priority(Enum):
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
 ```
-### Adding a Task
-1. Choose option `1`.
-2. Enter the task description.
-3. Task is added and saved.
 
-### Viewing Tasks
-- Choose option `2` to display all tasks with their status (✅ for completed, ❌ for pending).
+### Task Display Format
+```
+1. ✅ 🔴 Example Task [category] 📅 2025-11-15
+```
 
-### Marking a Task as Completed
-1. Choose option `3`.
-2. Enter the task number.
-3. The task will be marked as completed.
+Icons:
+- ✅ Completed task
+- ❌ Pending task
+- 🔴 High priority
+- 🟡 Medium priority
+- 🟢 Low priority
 
-### Deleting a Task
-1. Choose option `4`.
-2. Enter the task number to remove.
-3. The task will be deleted permanently.
+### Data Management
+- Automatic backups with timestamps
+- JSON storage format
+- Data validation on save/load
+- Error recovery mechanisms
+- Backup restoration
 
-### Updating a Task
-1. Choose option `5`.
-2. Enter the task number to update.
-3. Provide a new task name.
-4. The task will be updated.
+## 💾 File Structure
 
-### Loading Saved Tasks
-- Choose option `6` to reload tasks from the JSON file.
+- `todo.py` - Main application file
+- `tasks.json` - Task storage file
+- `.backups/` - Backup directory
+- `tasks_export.csv` - CSV export file (when used)
+- `tasks_export.txt` - Text export file (when used)
 
-### Exiting the Program
-- Choose option `7` to exit.
+## 🔧 Development Standards
 
-## 🔮 Future Enhancements
-- [ ] Add due dates for tasks
-- [ ] Implement priority levels (Low, Medium, High)
-- [ ] Enable filtering tasks by status or priority
-- [ ] Support task categories or tags
-- [ ] Integrate with a database instead of a JSON file
-- [ ] Implement a graphical user interface (GUI)
-- [ ] Add notifications/reminders
-- [ ] User verification to create a profile for each user
+### Documentation
+All functions follow PEP 257 docstring conventions:
+```python
+def function_name(param: type) -> return_type:
+    """Short description.
+
+    Detailed description if needed.
+
+    Args:
+        param: Parameter description.
+
+    Returns:
+        Description of return value.
+
+    Raises:
+        ExceptionType: Description of when this occurs.
+
+    Note:
+        Additional implementation notes.
+    """
+```
+
+### Type Hints
+All code uses proper type hints:
+```python
+from typing import List, Dict, Optional
+
+def example_function(tasks: List[Task]) -> Optional[Dict[str, int]]:
+    # Function implementation
+```
+
+## 🛠️ Future Improvements
+
+1. Multiple todo lists
+2. Subtasks support
+3. Task reminders
+4. Recurring tasks
+5. Collaboration features
+6. Task prioritization algorithm
+7. Data visualization
+8. Import functionality
+9. Task templates
+10. Task dependencies
 
 ## 🤝 Contributing
-Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
+
+When contributing, please:
+1. Follow PEP 8 style guide
+2. Include proper type hints
+3. Write comprehensive docstrings
+4. Add tests for new features
+5. Update documentation
 
 ## 📝 License
-This project is licensed under the MIT License.
 
----
-🚀 Happy Task Managing! 🎯
+This project is open source and available under the MIT License.
+
+## 🔨 Development Setup
+
+1. Clone the repository
+2. Ensure Python 3.7+ is installed
+3. No additional dependencies required
+4. Run `python todo.py`
+
+## ✅ Code Quality Checks
+
+The codebase maintains high quality through:
+- Type checking compliance
+- PEP 8 style guide adherence
+- PEP 257 docstring conventions
+- Comprehensive error handling
+- Consistent code formatting
