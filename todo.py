@@ -390,7 +390,17 @@ def toggle_task_completion(tasks: List[Task]) -> None:
         print("⚠️ Please enter a valid number!")
 
 def sort_tasks(tasks: List[Task]) -> None:
-    """Sort tasks by various criteria."""
+    """Sort tasks by various criteria.
+
+    Present a menu to choose sorting by due date, priority, title, or
+    category and display the sorted tasks.
+
+    Args:
+        tasks: List of Task objects to sort and display.
+
+    Returns:
+        None
+    """
     print("\nSort by:")
     print("1. Due date")
     print("2. Priority")
@@ -415,7 +425,16 @@ def sort_tasks(tasks: List[Task]) -> None:
     view_tasks(sorted_tasks)
 
 def show_statistics(tasks: List[Task]) -> None:
-    """Display task statistics."""
+    """Show statistics for the task list.
+
+    Print overall counts and breakdowns by priority and category.
+
+    Args:
+        tasks: List of Task objects to analyze.
+
+    Returns:
+        None
+    """
     total = len(tasks)
     completed = sum(1 for t in tasks if t.completed)
     pending = total - completed
@@ -441,7 +460,17 @@ def show_statistics(tasks: List[Task]) -> None:
         print(f"{cat}: {count}")
 
 def search_tasks(tasks: List[Task]) -> None:
-    """Search tasks by keyword."""
+    """Search tasks by keyword.
+    
+    Prompts user for a search term and displays all tasks matching that term
+    in title, description, or category fields.
+    
+    Args:
+        tasks: List of Task objects to search through.
+        
+    Returns:
+        None
+    """
     keyword = input("Enter search term: ").strip().lower()
     if not keyword:
         print("⚠️ Search term cannot be empty!")
@@ -458,7 +487,21 @@ def search_tasks(tasks: List[Task]) -> None:
         print("❌ No matching tasks found!")
 
 def export_tasks(tasks: List[Task]) -> None:
-    """Export tasks to different formats."""
+    """Export tasks to different formats.
+
+    Prompt the user to choose an export format and write the provided tasks
+    to a file in the selected format. Supported formats are CSV and plain
+    text.
+
+    Args:
+        tasks (List[Task]): Tasks to export.
+
+    Returns:
+        None
+
+    Raises:
+        OSError: If writing to the export file fails.
+    """
     print("\nExport format:")
     print("1. CSV")
     print("2. Text file")
